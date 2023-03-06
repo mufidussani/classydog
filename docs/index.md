@@ -20,11 +20,11 @@ Permasalahan:
 Ide Solusi:  
 Web Application  
 Rancangan Fitur Solusi:  
-![fitur_solusi](https://github.com/mufidussani/college-bicycle/blob/main/image/Class%20Diagram%20College%20Bicycle.png?raw=true)  
+![fitur_solusi](https://github.com/mufidussani/classydog/blob/main/docs/image/rancangan_fitur.png?raw=true)  
 Analisis Kompetitor:  
 1. Google Lens  
-![google_lens](https://github.com/mufidussani/college-bicycle/blob/main/image/Class%20Diagram%20College%20Bicycle.png?raw=true)  
+![google_lens](https://github.com/mufidussani/classydog/blob/main/docs/image/google_lens.png?raw=true)  
 2. PictPicks  
-![PictPicks](https://github.com/mufidussani/college-bicycle/blob/main/image/Class%20Diagram%20College%20Bicycle.png?raw=true)  
+![PictPicks](https://github.com/mufidussani/classydog/blob/main/docs/image/pictpicks.png?raw=true)  
 3. Dog Scanner  
-![dog_scanner](https://github.com/mufidussani/college-bicycle/blob/main/image/Class%20Diagram%20College%20Bicycle.png?raw=true)  
+![dog_scanner](https://github.com/mufidussani/classydog/blob/main/docs/image/dog_scanner.png?raw=true)  
