@@ -43,12 +43,15 @@ Mengurangi kesalahan saat menganalisis jenis atau tipe anjing.
 b. Pengguna potensial dari produk dan kebutuhan para pengguna tersebut  
 Pencinta anjing maupun pengguna umum. Bagi pencinta anjing, aplikasi ini dapat memudahkan untuk dapat memberikan jenis atau tipe anjing dengan lebih akurat. Bagi pengguna umum, aplikasi ini dapat menjadi sarana wadah edukasi mengenali tipe anjing.  
 c. Use case diagram  
-![use_case](https://github.com/mufidussani/classydog/blob/main/docs/image/dog_scanner.png?raw=true)  
+![use_case](https://github.com/mufidussani/classydog/blob/main/docs/image/USE%20CASE.drawio%20(1).png?raw=true)  
 d. Functional requirements untuk use case yang telah dirancang  
-![func_req](https://github.com/mufidussani/classydog/blob/main/docs/image/dog_scanner.png?raw=true)  
+![func_req](https://github.com/mufidussani/classydog/blob/main/docs/image/functional_req.png?raw=true)  
 e. Entity relationship diagram  
 ![er_diagram](https://github.com/mufidussani/classydog/blob/main/docs/image/dog_scanner.png?raw=true)  
 f. Low-fidelity Wireframe  
-![lo_fi](https://github.com/mufidussani/classydog/blob/main/docs/image/dog_scanner.png?raw=true)  
+![lo_fi](https://github.com/mufidussani/classydog/blob/main/docs/image/Desktop%20-%201.png?raw=true)  
+![lo_fi](https://github.com/mufidussani/classydog/blob/main/docs/image/Desktop%20-%202.png?raw=true)  
+![lo_fi](https://github.com/mufidussani/classydog/blob/main/docs/image/Desktop%20-%203.png?raw=true)  
+![lo_fi](https://github.com/mufidussani/classydog/blob/main/docs/image/Desktop%20-%204.png?raw=true)  
 g. Gantt-Chart pengerjaan proyek dalam kurun waktu 1 semester  
-![gantt-chart](https://github.com/mufidussani/classydog/blob/main/docs/image/dog_scanner.png?raw=true)  
+![gantt-chart](https://github.com/mufidussani/classydog/blob/main/docs/image/gantt_chart.png?raw=true)  
