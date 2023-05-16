@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route} from "react-router-dom";
+
+import Hero from "./pages/Hero"
+import CJenis from "./pages/CJenis";
+import LJenis from "./pages/LJenis";
+import Tentang from "./pages/Tentang";
+import Navbar from "./components/Navbar";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-row">
+      
+      <main className="min-h-screen w-full font-display">
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/tentang" element={<Tentang />} />
+          <Route path="/LihatJenis" element={<LJenis />} />
+          <Route path="/CariJenis" element={<CJenis />} />
+        </Routes>
+      </main>
     </div>
   );
 }
