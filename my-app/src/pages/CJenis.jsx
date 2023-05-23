@@ -1,5 +1,5 @@
 import { HtmlHead } from "../components/HtmlHead";
-import Cari from "../components/CJenis";
+import Cari from "../components/Cari";
 
 export default function CJenis() {
   return (

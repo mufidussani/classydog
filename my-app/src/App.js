@@ -1,4 +1,4 @@
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Hero from "./pages/Hero"
 import CJenis from "./pages/CJenis";
@@ -9,14 +9,14 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="flex flex-row">
+    <div className="">
       <Navbar/>
-      <main className="min-h-screen w-full font-display">
+      <main className="">
         <Routes>  
           <Route path="/" element={<Hero />} />
+          <Route path="/CariJenis" element={<CJenis />} />
           <Route path="/tentang" element={<Tentang />} />
           <Route path="/LihatJenis" element={<LJenis />} />
-          <Route path="/CariJenis" element={<CJenis />} />
         </Routes>
       </main>
     </div>

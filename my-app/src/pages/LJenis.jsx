@@ -1,5 +1,5 @@
 import { HtmlHead } from "../components/HtmlHead";
-import Lihat from "../components/LJenis";
+import Lihat from "../components/Lihat";
 
 export default function LJenis() {
   return (

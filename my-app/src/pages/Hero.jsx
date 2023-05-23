@@ -1,5 +1,5 @@
 import { HtmlHead } from "../components/HtmlHead";
-import Main from "../components/Hero";
+import Main from "../components/Home";
 
 export default function Hero() {
   return (
