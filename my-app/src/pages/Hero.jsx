@@ -1,7 +1,7 @@
 import { HtmlHead } from "../components/HtmlHead";
 import Main from "../components/Hero";
 
-export default function Tentang() {
+export default function Hero() {
   return (
     <>
       <HtmlHead

@@ -10,9 +10,9 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="flex flex-row">
-      
+      <Navbar/>
       <main className="min-h-screen w-full font-display">
-        <Routes>
+        <Routes>  
           <Route path="/" element={<Hero />} />
           <Route path="/tentang" element={<Tentang />} />
           <Route path="/LihatJenis" element={<LJenis />} />
