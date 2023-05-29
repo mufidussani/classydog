@@ -9,7 +9,7 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <div className="text-white fixed z-[100] flex h-[70px] w-full justify-between bg-black">
+    <div className="text-white fixed z-[100] flex h-[70px] w-full justify-between bg-green">
       <div className="ml-14 flex flex-shrink-0 items-center py-4 px-[28px] mobile:mx-0 mobile:px-10">
         <div className="h-full w-full pb-[3.05rem]">
           <Link to="">

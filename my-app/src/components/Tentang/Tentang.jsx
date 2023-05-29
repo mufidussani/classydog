@@ -2,16 +2,17 @@ import React from 'react'
 
 const Tentang = () => {
   return (
-    <main className="overflow-hidden">
-    <div className="bg-putih h-screen"></div>
-    <div className="font-body mx-9 my-4 md:mx-[120px] md:my-[30px] text-[15px] md:text-xl">
-    <h1 className="text-hijau-sedang font-heading font-bold text-3xl md:text-5xl pb-3">
-      ClassyDog adalah aplikasi web untuk melakukan identifikasi terhadap tipe atau jenis anjing.
-      <br></br>
-      Hubungi kami untuk mendapatkan informasi lebih lanjut.
-    </h1>
+    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-6 pt-8 pb-12 sm:gap-8 sm:pt-16 sm:pb-24 bg-lgreen">
+    <span className=" text-subHeadingM sm:text-subHeading">Tentang ClasyDog</span>
+    <div className=" flex flex-col-reverse gap-8 sm:flex-row sm:gap-16">
+      <div className="flex flex-col items-center justify-center gap-5 sm:w-[450px] sm:items-start sm:justify-start sm:gap-6">
+        <div className="text-center text-contentM sm:text-justify sm:text-content">
+        ClassyDog adalah aplikasi web untuk melakukan identifikasi terhadap tipe atau jenis anjing.
+        Hubungi kami untuk mendapatkan informasi lebih lanjut.
+        </div>
+      </div>
+    </div>
   </div>
-  </main>
   )
 }
 

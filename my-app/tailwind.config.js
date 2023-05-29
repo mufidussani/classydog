@@ -22,6 +22,8 @@ module.exports = {
         },
         black: "#3F4254",
         gray: "rgba(126, 130, 153, 0.06)",
+        green: "#003525",
+        lgreen: "#005637",
       },
       fontSize: {
         heading: [
