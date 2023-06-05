@@ -1,6 +1,6 @@
 import React from 'react'
 // import logo from "../assets/logo_fgm.svg";
-import logo from '../../assets/logo-app.svg'
+import logo from '../../assets/logo-app.jpg'
 
 const Tentang = () => {
   return (
@@ -25,7 +25,7 @@ const Tentang = () => {
         <img
           src={logo}
           alt="logo"
-          className="h-[196px] sm:h-[340px] "
+          className="h-[340px] sm:h-[340px] "
         />
       </div>
     </div>
