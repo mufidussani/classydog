@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div className="text-white fixed z-[100] flex h-[70px] w-full justify-between bg-green">
-      <div className="ml-14 flex flex-shrink-0 items-center py-4 px-[28px] mobile:mx-0 mobile:px-10">
+      <div className="ml-14 flex flex-shrink-0 items-center py-4 px-[28px] mobile:mx-0 mobile:px-10 ">
         <div className="h-full w-full pb-[3.05rem]">
           <Link to="">
             <img
@@ -45,7 +45,7 @@ const Navbar = () => {
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             }}
-            className="hover:bg-pattern w-[9rem] cursor-pointer py-5 text-center hover:animate-fade hover:bg-cover hover:bg-center hover:font-bold"
+            className="hover:bg-pattern w-[9rem] cursor-pointer py-5 text-center hover:animate-fade hover:bg-cover hover:bg-center hover:font-bold text-white-normal"
           >
             Beranda
           </li>
@@ -60,7 +60,7 @@ const Navbar = () => {
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             }}
-            className="hover:bg-pattern w-[9rem] cursor-pointer py-5 text-center hover:animate-fade hover:bg-cover hover:bg-center hover:font-bold"
+            className="hover:bg-pattern w-[9rem] cursor-pointer py-5 text-center hover:animate-fade hover:bg-cover hover:bg-center hover:font-bold text-white-normal"
           >
             Lihat Jenis
           </li>
@@ -75,7 +75,7 @@ const Navbar = () => {
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             }}
-            className="hover:bg-pattern w-[9rem] cursor-pointer py-5 text-center hover:animate-fade hover:bg-cover hover:bg-center hover:font-bold"
+            className="hover:bg-pattern w-[9rem] cursor-pointer py-5 text-center hover:animate-fade hover:bg-cover hover:bg-center hover:font-bold text-white-normal"
           >
             Cari Jenis
           </li>
@@ -89,7 +89,7 @@ const Navbar = () => {
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             }}
-            className="hover:bg-pattern w-[9rem] -translate-x-6 transform cursor-pointer py-5 text-center hover:animate-fade hover:bg-cover hover:bg-center hover:font-bold"
+            className="hover:bg-pattern w-[9rem] -translate-x-6 transform cursor-pointer py-5 text-center hover:animate-fade hover:bg-cover hover:bg-center hover:font-bold text-white-normal"
           >
             Tentang
           </li>
@@ -132,7 +132,7 @@ const Navbar = () => {
       >
         {/* <div className={`${navbar ? "absolute" : "hidden"}`}> */}
 
-        <ul className="z-50 mx-0 mt-16 flex h-full w-full flex-col bg-green sm:fixed sm:items-center sm:justify-evenly sm:text-3xl xl:hidden mobile:fixed mobile:items-center mobile:gap-10 mobile:text-3xl">
+        <ul className="z-50 mx-0 mt-16 flex h-full w-full flex-col bg-green sm:fixed sm:items-center sm:justify-evenly sm:text-3xl xl:hidden mobile:fixed mobile:items-center mobile:gap-10 mobile:text-3xl text-white-normal">
           <li className="active">
             <Link
               to=""
