@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import React, { useState } from "react";
-import Logo from "../assets/logo-navbar.svg";
-import logo from "../assets/logo_fgm.svg";
+import Logo from "../assets/logo-navbar.png";
+import logo from "../assets/logo-app.jpg";
 import { CSSTransition } from "react-transition-group";
 import { Divide as Hamburger } from "hamburger-react";
 
@@ -19,7 +19,7 @@ const Navbar = () => {
               }}
               src={Logo}
               alt="Logo"
-              className="hover:cursor-pointer mobile:hidden navbar1:hidden"
+              className="h-12 hover:cursor-pointer mobile:hidden navbar1:hidden"
             />
           </Link>
           <Link to="">

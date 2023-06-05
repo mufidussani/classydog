@@ -35,14 +35,14 @@ const LJenis = () => {
   };
 
   return (
-    <div className=" flex min-h-screen w-full justify-center gap-12 bg-lgreen px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-6">
+    <div className=" flex min-h-screen w-full justify-center gap-12 bg-lgreen px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-6 ">
       <form
         onSubmit={handleSubmit}
         className="container mt-[5rem] pt-5 pb-5 px-[5rem]"
         encType="multipart/form-data"
       >
         {/* Form input */}
-        <div className="form-inline justify-content-center">
+        <div className="form-inline justify-content-center my-12">
           <label htmlFor="image" className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-3xl">
             Unggah Gambar di Bawah:{" "}
           </label>
@@ -69,7 +69,7 @@ const LJenis = () => {
         </div>
 
         {/* Tombol submit */}
-        <div className="input-group justify-content-center mt-4">
+        <div className="input-group justify-content-center mb-4">
           <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
@@ -79,7 +79,7 @@ const LJenis = () => {
         </div>
 
         {/* Tampilkan hasil */}
-        <div className="mt-[2rem] bg-lgreen">
+        <div className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-2xl ">
           <h1>Hasil:</h1>
           {data ? (
             <h3>
