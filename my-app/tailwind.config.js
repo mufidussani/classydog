@@ -3,11 +3,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: {
-          dark: "#00807F",
-          normal: "#08A78B",
-          light: "#B7FAEE",
-        },
         blue: {
           dark: "#181C32",
           normal: "#1A516F",
@@ -22,7 +17,7 @@ module.exports = {
         },
         black: "#3F4254",
         gray: "rgba(126, 130, 153, 0.06)",
-        green: "#003525",
+        ogreen: "#003525",
         lgreen: "#005637",
       },
       fontSize: {

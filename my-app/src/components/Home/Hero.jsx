@@ -5,13 +5,12 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 const Hero = () => {
   return (
     <>
-      <div className=" flex min-h-screen w-full flex-col-reverse items-center justify-center gap-12 bg-lgreen px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-24">
+      <div className=" flex min-h-screen w-full flex-col-reverse items-center justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-24 bg-gradient-to-r from-green-500 to-lgreen">
         <div className="flex flex-col items-center justify-center gap-1 sm:items-start sm:justify-start sm:gap-4">
           <span className=" text-center text-white-normal text-3xl font-semibold sm:text-left sm:text-5xl">
-            ClassyDog adalah aplikasi web untuk dapat melakukan identifikasi
-            terhadap jenis atau tipe anjing berdasarkan gambar yang diunggah.
+            Selamat Datang di ClassyDog
           </span>
-          <span className=" text-center text-white-normal text-3xl font-semibold sm:text-left sm:text-5xl mt-10">
+          <span className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-2xl mt-10">
             Mulai identifikasi terhadap jenis anjing!
           </span>
           <Link to="/LihatJenis">
