@@ -35,64 +35,66 @@ const LJenis = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="container mt-[5rem] pt-5 pb-5 px-[5rem] bg-red"
-      encType="multipart/form-data"
-    >
-      {/* Form input */}
-      <div className="form-inline justify-content-center bg-yellow">
-        <label htmlFor="image" className="ml-sm-4 font-weight-bold mr-md-4">
-          Unggah gambar di bawah:{" "}
-        </label>
-        <div className="input-group">
-          <input
-            onChange={handleImageChange}
-            type="file"
-            id="image"
-            name="file"
-            accept="image/*"
-            className="file-custom"
-          />
-          {previewImage && (
-            <div>
-              {/* <h4>Preview:</h4> */}
-              <img
-                src={previewImage}
-                alt="Preview"
-                style={{ width: "600px" }}
-              />
-            </div>
-          )}
+    <div className=" flex min-h-screen w-full justify-center gap-12 bg-lgreen px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-6">
+      <form
+        onSubmit={handleSubmit}
+        className="container mt-[5rem] pt-5 pb-5 px-[5rem]"
+        encType="multipart/form-data"
+      >
+        {/* Form input */}
+        <div className="form-inline justify-content-center">
+          <label htmlFor="image" className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-3xl">
+            Unggah Gambar di Bawah:{" "}
+          </label>
+          <div className="input-group">
+            <input
+              onChange={handleImageChange}
+              type="file"
+              id="image"
+              name="file"
+              accept="image/*"
+              className="file-custom"
+            />
+            {previewImage && (
+              <div>
+                {/* <h4>Preview:</h4> */}
+                <img
+                  src={previewImage}
+                  alt="Preview"
+                  style={{ width: "600px" }}
+                />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* Tombol submit */}
-      <div className="input-group justify-content-center mt-4">
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
-        >
-          Cari!
-        </button>
-      </div>
+        {/* Tombol submit */}
+        <div className="input-group justify-content-center mt-4">
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
+          >
+            Cari!
+          </button>
+        </div>
 
-      {/* Tampilkan hasil */}
-      <div className="mt-[2rem] bg-lgreen">
-        <h1>Hasil:</h1>
-        {data ? (
-          <h3>
-            Jenis Anjing Ditemukan!
-            <br />
-            Anjing tersebut masuk dalam klasifikasi ras Anjing {data}
-          </h3>
-        ) : (
-          ""
-        )}
-        {/* <h3>Jenis Anjing Ditemukan!</h3>
-        <h3>Anjing tersebut masuk dalam klasifikasi ras Anjing {data}</h3> */}
-      </div>
-    </form>
+        {/* Tampilkan hasil */}
+        <div className="mt-[2rem] bg-lgreen">
+          <h1>Hasil:</h1>
+          {data ? (
+            <h3>
+              Jenis Anjing Ditemukan!
+              <br />
+              Anjing tersebut masuk dalam klasifikasi ras Anjing {data}
+            </h3>
+          ) : (
+            ""
+          )}
+          {/* <h3>Jenis Anjing Ditemukan!</h3>
+          <h3>Anjing tersebut masuk dalam klasifikasi ras Anjing {data}</h3> */}
+        </div>
+      </form>
+    </div>
   );
 };
 
