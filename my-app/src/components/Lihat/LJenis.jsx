@@ -37,11 +37,11 @@ const LJenis = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="container mt-[5rem] pt-5 pb-5 px-[5rem]"
+      className="container mt-[5rem] pt-5 pb-5 px-[5rem] bg-red"
       encType="multipart/form-data"
     >
       {/* Form input */}
-      <div className="form-inline justify-content-center">
+      <div className="form-inline justify-content-center bg-yellow">
         <label htmlFor="image" className="ml-sm-4 font-weight-bold mr-md-4">
           Unggah gambar di bawah:{" "}
         </label>
@@ -78,7 +78,7 @@ const LJenis = () => {
       </div>
 
       {/* Tampilkan hasil */}
-      <div className="mt-[2rem]">
+      <div className="mt-[2rem] bg-lgreen">
         <h1>Hasil:</h1>
         {data ? (
           <h3>
