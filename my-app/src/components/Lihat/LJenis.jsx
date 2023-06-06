@@ -13,15 +13,15 @@ const LJenis = () => {
   const [previewImage, setPreviewImage] = useState(null);
   const [historyImages, setHistoryImages] = useState([]);
   const [dogList, setDogList] = useState([]);
-  const [url, setURL] = useState("");
+  const [url, setURL] = useState();
 
   useEffect(() => {
     console.log(data);
   }, [data]);
 
-  // useEffect(() => {
-  //   // console.log(data);
-  // }, [url]);
+  useEffect(() => {
+    // console.log(data);
+  }, [url]);
 
   const postDogHistory = async (dogName, dogImageURL) => {
     const formData = new FormData();
@@ -36,44 +36,44 @@ const LJenis = () => {
 
       if (resp.ok) {
         // Berhasil membuat history dog
-        alert("Dog history created successfully");
+        // alert("Dog history created successfully");
       } else {
         // Gagal membuat history dog
-        alert("Failed to create dog history");
+        // alert("Failed to create dog history");
       }
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
-  // const imageUpload = () => {
-  //   if (selectedImage == null) return;
-  //   const imageRef = ref(storage, `images/${selectedImage.name + v4()}`);
-  //   uploadBytes(imageRef, selectedImage)
-  //     .then(() => {
-  //       return getDownloadURL(imageRef);
-  //     })
-  //     .then((downloadURL) => {
-  //       // Save the download URL as a string
-  //       const imageURL = downloadURL.toString();
-  //       setURL(imageURL);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error uploading image:", error);
-  //     });
-  // };
-  const imageUpload = async () => {
+  const imageUpload = () => {
     if (selectedImage == null) return;
     const imageRef = ref(storage, `images/${selectedImage.name + v4()}`);
-    try {
-      uploadBytes(imageRef, selectedImage);
-      const downloadURL = getDownloadURL(imageRef);
-      const imageURL = downloadURL.toString();
-      setURL(imageURL);
-    } catch (error) {
-      console.error("Error uploading image:", error);
-    }
+    uploadBytes(imageRef, selectedImage)
+      .then(() => {
+        return getDownloadURL(imageRef);
+      })
+      .then((downloadURL) => {
+        // Save the download URL as a string
+        const imageURL = downloadURL.toString();
+        setURL(imageURL);
+      })
+      .catch((error) => {
+        console.error("Error uploading image:", error);
+      });
   };
+  // const imageUpload = async () => {
+  //   if (selectedImage == null) return;
+  //   const imageRef = ref(storage, `images/${selectedImage.name + v4()}`);
+  //   try {
+  //     uploadBytes(imageRef, selectedImage);
+  //     const downloadURL = getDownloadURL(imageRef);
+  //     const imageURL = downloadURL.toString();
+  //     setURL(imageURL);
+  //   } catch (error) {
+  //     console.error("Error uploading image:", error);
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -95,11 +95,8 @@ const LJenis = () => {
       if (responseData.predict) {
         const dogName = getDogNameByBreed(responseData.predict);
         if (dogName) {
-          // Memanggil fungsi imageUpload setelah berhasil mendapatkan URL gambar
-          imageUpload().then(() => {
-            // Setelah imageUpload selesai, panggil postDogHistory dengan dogName dan url
-            postDogHistory(dogName, url);
-          });
+          await imageUpload();
+          postDogHistory(dogName, url);
         }
       }
       console.log(data);
@@ -154,6 +151,11 @@ const LJenis = () => {
     return dog ? dog.dog_name : "";
   };
 
+  const getDogDesc = (breed) => {
+    const dog = dogList.find((dog) => dog.breed_name === breed);
+    return dog ? dog.description : "";
+  };
+
   return (
     <div className=" flex min-h-screen w-full justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-2 bg-gradient-to-r from-mgreen to-lgreen">
       <form
@@ -161,7 +163,7 @@ const LJenis = () => {
         className="flex flex-col sm:flex-row container mt-[5rem] pt-5 pb-5 px-[5rem] sm:px-8 lg:px-0"
         encType="multipart/form-data"
       >
-        <div className="w-full sm:w-1/2">
+        <div className="w-full sm:w-1/2 px-10">
           {/* Form input */}
           <div className="form-inline justify-content-center my-12">
             <label
@@ -173,7 +175,7 @@ const LJenis = () => {
               <br />
               {""}
             </label>
-            <div className="input-group ">
+            <div className="input-group text-white-normal">
               <input
                 onChange={handleImageChange}
                 type="file"
@@ -206,7 +208,7 @@ const LJenis = () => {
           </div>
         </div>
 
-        <div className=" w-full sm:w-1/2">
+        <div className=" w-full sm:w-1/2 px-10">
           {/* Tampilkan hasil */}
           <div className="text-center font-subHeading text-white-normal text-xl font-semibold sm:text-left sm:text-2xl my-12">
             <h1>Hasil:</h1>
@@ -229,6 +231,11 @@ const LJenis = () => {
                       <br />
                       Anjing tersebut masuk dalam klasifikasi ras Anjing{" "}
                       {getDogNameByBreed(data)}
+                      <br />
+                      <br />
+                      Deskripsi
+                      <br />
+                      <span className="pt-10">{getDogDesc(data)}</span>
                     </h3>
                     {/* Tampilkan gambar anjing */}
                     {/* <img
@@ -238,7 +245,7 @@ const LJenis = () => {
                     /> */}
                   </>
                 ) : (
-                  <h3>Jenis Anjing Tidak Ditemukan!</h3>
+                  <h3>Jenis Anjing Tidak Dapat Ditemukan!</h3>
                 )}
               </>
             ) : (
