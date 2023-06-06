@@ -65,7 +65,9 @@ const LJenis = () => {
   useEffect(() => {
     const fetchDogList = async () => {
       try {
-        const resp = await fetch("http://localhost:9000/dogs");
+        const resp = await fetch(
+          "https://ruby-calm-jackrabbit.cyclic.app/dogs"
+        );
         const dogData = await resp.json();
         setDogList(dogData);
       } catch (error) {
@@ -90,29 +92,29 @@ const LJenis = () => {
       >
         <div className=" w-1/2 ">
           {/* Form input */}
-          <div className="form-inline justify-content-center my-12">
+          <div className="form-inline justify-content-center mt-12 mb-4">
             <label
               htmlFor="image"
-              className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-3xl"
+              className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-2xl"
             >
               Unggah Gambar di Bawah:{" "}
             </label>
-            <div className="input-group ">
+            <div className="input-group mt-5">
               <input
                 onChange={handleImageChange}
                 type="file"
                 id="image"
                 name="file"
                 accept="image/*"
-                className="file-custom"
+                className="file-custom text-white-normal"
               />
               {previewImage && (
                 <div>
-                  {/* <h4>Preview:</h4> */}
+                  {/* <h4 className="text-white-normal">Preview:</h4> */}
                   <img
+                    className="max-w-[300px]"
                     src={previewImage}
                     alt="Preview"
-                    style={{ width: "600px" }}
                   />
                 </div>
               )}
