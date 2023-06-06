@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 
 const LJenis = () => {
   const [data, setData] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
+  const [historyImages, setHistoryImages] = useState([]);
+  const [dogList, setDogList] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
     try {
-      const resp = await fetch("http://127.0.0.1:5000/upload", {
+      const resp = await fetch("http://localhost:5000/upload", {
         method: "POST",
         body: formData,
       });
@@ -20,18 +24,61 @@ const LJenis = () => {
     }
   };
 
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [previewImage, setPreviewImage] = useState(null);
-
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setSelectedImage(file);
+
+    // local storage image
+    getBase64(file).then((base64) => {
+      setHistoryImages([...historyImages, base64]);
+      console.debug("file stored", base64);
+    });
 
     const reader = new FileReader();
     reader.onloadend = () => {
       setPreviewImage(reader.result);
     };
     reader.readAsDataURL(file);
+  };
+
+  // local storage
+  const getBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+      reader.readAsDataURL(file);
+    });
+  };
+
+  useEffect(() => {
+    const storedImages = JSON.parse(localStorage.getItem("fileImages"));
+    if (storedImages) {
+      setHistoryImages(storedImages);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("fileImages", JSON.stringify(historyImages));
+  }, [historyImages]);
+
+  useEffect(() => {
+    const fetchDogList = async () => {
+      try {
+        const resp = await fetch("http://localhost:9000/dogs");
+        const dogData = await resp.json();
+        setDogList(dogData);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+    fetchDogList();
+  }, []);
+
+  const getDogNameByBreed = (breed) => {
+    const dog = dogList.find((dog) => dog.breed_name === breed);
+    return dog ? dog.dog_name : "";
   };
 
   return (
@@ -42,9 +89,12 @@ const LJenis = () => {
         encType="multipart/form-data"
       >
         <div className=" w-1/2">
-         {/* Form input */}
+          {/* Form input */}
           <div className="form-inline justify-content-center my-12">
-            <label htmlFor="image" className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-3xl">
+            <label
+              htmlFor="image"
+              className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-3xl"
+            >
               Unggah Gambar di Bawah:{" "}
             </label>
             <div className="input-group">
@@ -88,7 +138,8 @@ const LJenis = () => {
               <h3>
                 Jenis Anjing Ditemukan!
                 <br />
-                Anjing tersebut masuk dalam klasifikasi ras Anjing {data}
+                Anjing tersebut masuk dalam klasifikasi ras Anjing{" "}
+                {getDogNameByBreed(data)}
               </h3>
             ) : (
               ""
@@ -98,6 +149,16 @@ const LJenis = () => {
           </div>
         </div>
       </form>
+      <img src={historyImages} style={{ width: "600px" }} />
+
+      {/* {historyImages.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt={`Preview ${index}`}
+          style={{ width: "600px" }}
+        />
+      ))} */}
     </div>
   );
 };
