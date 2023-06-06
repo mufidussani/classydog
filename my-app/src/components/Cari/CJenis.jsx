@@ -11,7 +11,7 @@ const CJenis = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://ruby-calm-jackrabbit.cyclic.app/dogs"
+          "https://tasty-bat-hem.cyclic.app/dogs"
         );
         setDogList(response.data);
         setFilteredDogList(response.data);
