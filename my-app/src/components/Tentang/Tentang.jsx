@@ -4,7 +4,7 @@ import logo from '../../assets/logo-app.jpg'
 
 const Tentang = () => {
   return (
-  <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-6 pt-8 pb-12 sm:gap-8 sm:pt-16 sm:pb-24 bg-gradient-to-r from-green-500 to-lgreen">
+  <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-6 pt-8 pb-12 sm:gap-8 sm:pt-16 sm:pb-24 bg-gradient-to-r from-mgreen to-lgreen">
       <span className="text-center text-white-normal text-3xl font-heading sm:text-left sm:text-5xl ">Tentang ClassyDog</span>
       <div className=" flex flex-col-reverse gap-8 sm:flex-row sm:gap-16">
         <div className="flex flex-col items-center justify-center gap-5 sm:w-[1200px] sm:items-start sm:justify-start sm:gap-6">

@@ -35,19 +35,19 @@ const LJenis = () => {
   };
 
   return (
-    <div className=" flex min-h-screen w-full justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-6 bg-gradient-to-r from-green-500 to-lgreen">
+    <div className=" flex min-h-screen w-full justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-2 bg-gradient-to-r from-mgreen to-lgreen">
       <form
         onSubmit={handleSubmit}
         className="flex container mt-[5rem] pt-5 pb-5 px-[5rem]"
         encType="multipart/form-data"
       >
-        <div className=" w-1/2">
+        <div className=" w-1/2 ">
          {/* Form input */}
           <div className="form-inline justify-content-center my-12">
             <label htmlFor="image" className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-3xl">
               Unggah Gambar di Bawah:{" "}
             </label>
-            <div className="input-group">
+            <div className="input-group ">
               <input
                 onChange={handleImageChange}
                 type="file"

@@ -16,9 +16,9 @@ module.exports = {
           light: "#7E829908",
         },
         black: "#3F4254",
-        gray: "rgba(126, 130, 153, 0.06)",
         ogreen: "#003525",
         lgreen: "#005637",
+        mgreen: "#002C25"
       },
       fontSize: {
         heading: [
