@@ -12,7 +12,11 @@ const LJenis = () => {
     const formData = new FormData(e.target);
 
     try {
-      const resp = await fetch("http://localhost:5000/upload", {
+      // const resp = await fetch("http://localhost:5000/upload", {
+      //   method: "POST",
+      //   body: formData,
+      // });
+      const resp = await fetch("https://classydog.azurewebsites.net/upload", {
         method: "POST",
         body: formData,
       });
@@ -90,7 +94,7 @@ const LJenis = () => {
         className="flex container mt-[5rem] pt-5 pb-5 px-[5rem]"
         encType="multipart/form-data"
       >
-        <div className=" w-1/2 ">
+        <div className="w-1/2 ">
           {/* Form input */}
           <div className="form-inline justify-content-center mt-12 mb-4">
             <label
