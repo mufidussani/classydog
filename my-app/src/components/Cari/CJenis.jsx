@@ -48,7 +48,7 @@ const CJenis = () => {
   // };
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center gap-12 px-6 pt-8 pb-12 mt-16 sm:gap-8 sm:pt-16 sm:pb-24 bg-gradient-to-r from-mgreen to-lgreen">
+    <div className="flex min-h-screen w-full flex-col items-center gap-12 mt-8 px-6 pt-8 pb-12 sm:gap-8 sm:pt-16 sm:pb-24 bg-gradient-to-r from-mgreen to-lgreen">
       <span className="text-center text-white-normal text-3xl font-semibold sm:text-left sm:text-5x ">
         Temukan jenis anjing yang akan dicari!
       </span>
