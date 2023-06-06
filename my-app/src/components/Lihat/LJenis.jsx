@@ -29,10 +29,13 @@ const LJenis = () => {
     formData.append("dog_image", dogImageURL);
 
     try {
-      const resp = await fetch("http://localhost:9000/post-history", {
-        method: "POST",
-        body: formData,
-      });
+      const resp = await fetch(
+        "https://tasty-bat-hem.cyclic.app/post-history",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (resp.ok) {
         // Berhasil membuat history dog
@@ -80,14 +83,14 @@ const LJenis = () => {
     const formData = new FormData(e.target);
 
     try {
-      const resp = await fetch("http://localhost:5000/upload", {
-        method: "POST",
-        body: formData,
-      });
-      // const resp = await fetch("https://classydog.azurewebsites.net/upload", {
+      // const resp = await fetch("http://localhost:5000/upload", {
       //   method: "POST",
       //   body: formData,
       // });
+      const resp = await fetch("https://classydog.azurewebsites.net/upload", {
+        method: "POST",
+        body: formData,
+      });
       const responseData = await resp.json();
       console.log(responseData);
       setData(responseData.predict);
