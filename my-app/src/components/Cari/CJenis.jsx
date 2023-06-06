@@ -49,26 +49,26 @@ const CJenis = () => {
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center gap-12 mt-8 px-6 pt-8 pb-12 sm:gap-8 sm:pt-16 sm:pb-24 bg-gradient-to-r from-mgreen to-lgreen">
-      <span className="text-center text-white-normal text-3xl font-semibold sm:text-left sm:text-5x ">
-        Temukan jenis anjing yang akan dicari!
-      </span>
-      <div className="flex flex-col md:flex-row md:items-center">
-        <input
-          type="text"
-          className="border border-gray-300 px-4 py-2 w-[15rem] text-center rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          placeholder="Search"
-          onChange={(e) => handleSearch(e.target.value)}
-        />
-        {/* <button
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-          onClick={() => handleSearch("")}
-        >
-          Cari!
-        </button> */}
-      </div>
-
-      {/* <Table /> */}
-      <table className="text-white-normal table-auto border-collapse border border-slate-400 w-[800px]">
+    <span className="text-center text-white-normal text-3xl font-semibold sm:text-left sm:text-5x mt-6 sm:mt-0 ">
+      Temukan jenis anjing yang akan dicari!
+    </span>
+    <div className="flex flex-col md:flex-row md:items-center">
+      <input
+        type="text"
+        className="border border-gray-300 px-4 py-2 w-[15rem] text-center rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        placeholder="Search"
+        onChange={(e) => handleSearch(e.target.value)}
+      />
+      {/* <button
+        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        onClick={() => handleSearch("")}
+      >
+        Cari!
+      </button> */}
+    </div>
+  
+    <div className="overflow-x-auto w-full">
+      <table className="text-white-normal table-auto border-collapse border border-slate-400 w-full">
         <thead>
           <tr>
             {/* <th className="py-3 px-4">Breed Name</th> */}
@@ -99,6 +99,7 @@ const CJenis = () => {
         </tbody>
       </table>
     </div>
+  </div>  
   );
 };
 

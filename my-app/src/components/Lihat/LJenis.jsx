@@ -85,7 +85,7 @@ const LJenis = () => {
     <div className=" flex min-h-screen w-full justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-2 bg-gradient-to-r from-mgreen to-lgreen">
       <form
         onSubmit={handleSubmit}
-        className="flex container mt-[5rem] pt-5 pb-5 px-[5rem] "
+        className="flex flex-col sm:flex-row container mt-[5rem] pt-5 pb-5 px-[5rem] sm:px-8 lg:px-0"
         encType="multipart/form-data"
       >
         <div className="w-full sm:w-1/2">

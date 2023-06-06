@@ -5,7 +5,7 @@ const Tentang = () => {
   return (
     <div className="flex min-h-screen bg-gradient-to-r from-mgreen to-lgreen">
       <div className="flex flex-col items-center justify-center gap-4 px-6 pt-8 pb-12 sm:gap-8 sm:pt-16 sm:pb-24">
-        <h1 className="text-3xl font-heading text-white-normal sm:text-5xl text-center sm:text-left">Tentang ClassyDog</h1>
+        <h1 className="text-3xl font-heading text-white-normal sm:text-4xl text-center sm:text-left">Tentang ClassyDog</h1>
         <div className="flex flex-col-reverse gap-8 sm:flex-row sm:gap-16">
           <div className="flex flex-col items-center justify-center gap-5 sm:w-[1200px] sm:items-start sm:justify-start sm:gap-6">
             <p className="text-justify text-white-normal text-xl font-subHeading sm:text-left sm:text-3xl px-12">
