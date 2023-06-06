@@ -12,11 +12,7 @@ const LJenis = () => {
     const formData = new FormData(e.target);
 
     try {
-      // const resp = await fetch("http://localhost:5000/upload", {
-      //   method: "POST",
-      //   body: formData,
-      // });
-      const resp = await fetch("https://classydog.azurewebsites.net/upload", {
+      const resp = await fetch("http://localhost:5000/upload", {
         method: "POST",
         body: formData,
       });
@@ -69,9 +65,7 @@ const LJenis = () => {
   useEffect(() => {
     const fetchDogList = async () => {
       try {
-        const resp = await fetch(
-          "https://ruby-calm-jackrabbit.cyclic.app/dogs"
-        );
+        const resp = await fetch("http://localhost:9000/dogs");
         const dogData = await resp.json();
         setDogList(dogData);
       } catch (error) {
@@ -91,34 +85,34 @@ const LJenis = () => {
     <div className=" flex min-h-screen w-full justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-2 bg-gradient-to-r from-mgreen to-lgreen">
       <form
         onSubmit={handleSubmit}
-        className="flex container mt-[5rem] pt-5 pb-5 px-[5rem]"
+        className="flex container mt-[5rem] pt-5 pb-5 px-[5rem] "
         encType="multipart/form-data"
       >
-        <div className="w-1/2 ">
+        <div className="w-full sm:w-1/2">
           {/* Form input */}
-          <div className="form-inline justify-content-center mt-12 mb-4">
+          <div className="form-inline justify-content-center my-12">
             <label
               htmlFor="image"
-              className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-2xl"
+              className="text-center font-subHeading text-white-normal text-xl font-semibold sm:text-left sm:text-3xl"
             >
-              Unggah Gambar di Bawah:{" "}
+              Unggah Gambar di Bawah:<br/><br/>{""}
             </label>
-            <div className="input-group mt-5">
+            <div className="input-group ">
               <input
                 onChange={handleImageChange}
                 type="file"
                 id="image"
                 name="file"
                 accept="image/*"
-                className="file-custom text-white-normal"
+                className="file-custom"
               />
               {previewImage && (
                 <div>
-                  {/* <h4 className="text-white-normal">Preview:</h4> */}
+                  {/* <h4>Preview:</h4> */}
                   <img
-                    className="max-w-[300px]"
                     src={previewImage}
                     alt="Preview"
+                    style={{ width: "600px" }}
                   />
                 </div>
               )}
@@ -129,16 +123,16 @@ const LJenis = () => {
           <div className="input-group justify-content-center mb-4">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
+              className="bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-400 hover:to-blue-500 text-white font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg"
             >
-              Cari!
+              Cari
             </button>
           </div>
         </div>
 
-        <div className=" w-1/2 ">
+        <div className=" w-full sm:w-1/2">
           {/* Tampilkan hasil */}
-          <div className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-2xl my-12">
+          <div className="text-center font-subHeading text-white-normal text-xl font-semibold sm:text-left sm:text-2xl my-12">
             <h1>Hasil:</h1>
             {data ? (
               getDogNameByBreed(data) == null ? (
