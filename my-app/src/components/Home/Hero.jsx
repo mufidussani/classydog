@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 const Hero = () => {
   return (
     <>
-      <div className=" flex min-h-screen w-full flex-col-reverse items-center justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-24 bg-gradient-to-r from-green-500 to-lgreen">
+      <div className=" flex min-h-screen w-full flex-col-reverse items-center justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-24 bg-gradient-to-r from-mgreen to-lgreen">
         <div className="flex flex-col items-center justify-center gap-1 sm:items-start sm:justify-start sm:gap-4">
           <span className=" text-center text-white-normal text-3xl font-semibold sm:text-left sm:text-5xl">
             Selamat Datang di ClassyDog

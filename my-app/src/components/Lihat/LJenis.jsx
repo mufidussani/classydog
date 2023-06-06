@@ -82,13 +82,13 @@ const LJenis = () => {
   };
 
   return (
-    <div className=" flex min-h-screen w-full justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-6 bg-gradient-to-r from-green-500 to-lgreen">
+    <div className=" flex min-h-screen w-full justify-center gap-12 px-0 sm:flex-row sm:gap-24 lg:px-0 xsm:px-2 bg-gradient-to-r from-mgreen to-lgreen">
       <form
         onSubmit={handleSubmit}
         className="flex container mt-[5rem] pt-5 pb-5 px-[5rem]"
         encType="multipart/form-data"
       >
-        <div className=" w-1/2">
+        <div className=" w-1/2 ">
           {/* Form input */}
           <div className="form-inline justify-content-center my-12">
             <label
@@ -97,7 +97,7 @@ const LJenis = () => {
             >
               Unggah Gambar di Bawah:{" "}
             </label>
-            <div className="input-group">
+            <div className="input-group ">
               <input
                 onChange={handleImageChange}
                 type="file"
@@ -135,12 +135,16 @@ const LJenis = () => {
           <div className="text-center text-white-normal text-xl font-semibold sm:text-left sm:text-2xl my-12">
             <h1>Hasil:</h1>
             {data ? (
-              <h3>
-                Jenis Anjing Ditemukan!
-                <br />
-                Anjing tersebut masuk dalam klasifikasi ras Anjing{" "}
-                {getDogNameByBreed(data)}
-              </h3>
+              getDogNameByBreed(data) == null ? (
+                <h3>
+                  Jenis Anjing Ditemukan!
+                  <br />
+                  Anjing tersebut masuk dalam klasifikasi ras Anjing{" "}
+                  {getDogNameByBreed(data)}
+                </h3>
+              ) : (
+                <h3>Jenis Anjing Tidak Ditemukan!</h3>
+              )
             ) : (
               ""
             )}
@@ -149,7 +153,7 @@ const LJenis = () => {
           </div>
         </div>
       </form>
-      <img src={historyImages} style={{ width: "600px" }} />
+      {/* <img src={historyImages} style={{ width: "600px" }} /> */}
 
       {/* {historyImages.map((image, index) => (
         <img
